@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>amami domani</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="overlay">
+    <div class="content">
+      <h1>amami domani</h1>
+      <p class="tagline">love me tomorrow</p>
+      <form onsubmit="return checkPassword()">
+        <input type="password" id="password" placeholder="Enter password" required>
+        <button type="submit">Enter</button>
+      </form>
+      <p id="error" class="error-message"></p>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById('password').value;
+      if (password === 'letmein') {
+        window.location.href = 'home.html';
+        return false;
+      } else {
+        document.getElementById('error').textContent = 'Incorrect password.';
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
